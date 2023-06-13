@@ -21,7 +21,7 @@ def Input_correto(carater):
 
 # Inicializar variáveis
 
-palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas", "Pastel-de-Nata"]
+palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas", "Transito", "Turistas"]
 escolha = palavras[random.randint(0,len(palavras)-1)]
 palavra_secreta = escolha.lower()
 
