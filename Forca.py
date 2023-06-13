@@ -32,10 +32,10 @@ letras_erradas = []
 
 # Jogo com 5 tentativas (<6)
 
-    print("\n=====Menu Inicial do Jogo da FORCA!=====\n")
-    print("1. Jogar")
-    print("2. Sair")
-break
+print("\n=====Menu Inicial do Jogo da FORCA!=====\n")
+print("1. Jogar")
+print("0. Sair")
+
 opcao = input("\nEscolha uma opção: ")
 
 if opcao =="1":
@@ -43,9 +43,10 @@ if opcao =="1":
     while tentativa <max_tentativas+1:
     
         if tentativa == max_tentativas-1:
-            print("É agora ou nunca, tem de acertar!")
+            print("\n \nÉ agora ou nunca, tem de acertar!")
         else:
-            print("\nAinda tem "+str(max_tentativas-1-tentativa)+" oportunidades de falhar.")
+            print("\nEscolheu Jogar o Jogo da FORCA!! \n"+ "Você terá um total de: " + str(max_tentativas)+ " tentativas")
+            print("Ainda tem "+str(max_tentativas-1-tentativa)+" oportunidades de falhar.")
 
     # Mecanismo de tentativas
 
@@ -88,12 +89,14 @@ if opcao =="1":
                 print()
                 break
             elif tentativa == max_tentativas:
-                print("\nGame over! Você perdeu. A palavra era: " + escolha)
+                print("\nGAME OVER! Você perdeu.\n" + "A palavra era: " + escolha)
                 break
 
     # Caso o input não esteja correto, avisa.
 
         else:
             print("Entrada inválida. Digite apenas letras e apenas uma.")
+elif opcao == "0":
+    print("\n\nEncerramos o programa. Obrigada\n\n")
 else:
-            print("Não digitou de 1 a 2, tente novamente.") #Caso o número inserido nao seja de 1 ou 2. 
+    print("\nNão digitou de 1 a 0, tente novamente.\n") #Caso o número inserido nao seja de 1 ou 0. 
