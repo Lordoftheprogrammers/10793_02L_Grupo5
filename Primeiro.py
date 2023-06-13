@@ -1,2 +1,3 @@
 # Um ficheiro para teste de sincronização
-# Comentário para teste de pull
+
+# Teste de Adicionar uma linha - ANARITA em 13/06
