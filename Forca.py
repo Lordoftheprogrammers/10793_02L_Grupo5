@@ -21,7 +21,7 @@ def Input_correto(carater):
 
 # Inicializar variáveis
 
-palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas"]
+palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas", "Pastel-de-Nata"]
 escolha = palavras[random.randint(0,len(palavras)-1)]
 palavra_secreta = escolha.lower()
 
@@ -32,57 +32,68 @@ letras_erradas = []
 
 # Jogo com 5 tentativas (<6)
 
-while tentativa <max_tentativas+1:
+    print("\n=====Menu Inicial do Jogo da FORCA!=====\n")
+    print("1. Jogar")
+    print("2. Sair")
+break
+opcao = input("\nEscolha uma opção: ")
+
+if opcao =="1":
+     
+    while tentativa <max_tentativas+1:
     
-    if tentativa == max_tentativas-1:
-        Print("É agora ou nunca, tem de acertar!")
-    else:
-        print("Ainda tem "+str(max_tentativas-1-tentativa)+" oportunidades de falhar.")
+        if tentativa == max_tentativas-1:
+            print("É agora ou nunca, tem de acertar!")
+        else:
+            print("\nAinda tem "+str(max_tentativas-1-tentativa)+" oportunidades de falhar.")
 
     # Mecanismo de tentativas
 
-    print("\n")
-    print("\nPalavra: " + " ".join(letras_acertadas))
-    print("\n")
-    print("Letras que não estão na palavra: " + ", ".join(letras_erradas))
-    print("\n")
-    letra = input("Digite uma letra: ").lower()
+        print("\n")
+        print("\nPalavra: " + " ".join(letras_acertadas))
+        print("\n")
+        print("Letras que não estão na palavra: " + ", ".join(letras_erradas))
+        print("\n")
+        letra = input("Digite uma letra: ").lower()
 
     # Verifico se está ou não ok o input
 
-    if Input_correto(letra):
-        
-        # Se for repetido, certo ou errado, avisa, mas nada altera.
+        if Input_correto(letra):
+            
+            # Se for repetido, certo ou errado, avisa, mas nada altera.
 
-        if letra in letras_erradas or letra in letras_acertadas:
-            print("Você já tentou essa letra. Tente novamente.")
-        # Se não for repetido, verifica se a letra existe na palavra secreta - se existir, insere na lista das que se mostra
-        elif letra in palavra_secreta:
-             for i in range(len(palavra_secreta)):
-                if palavra_secreta[i] == letra:
-                    letras_acertadas[i] = letra
+            if letra in letras_erradas or letra in letras_acertadas:
+                print("Você já tentou essa letra. Tente novamente.")
+            # Se não for repetido, verifica se a letra existe na palavra secreta - se existir, insere na lista das que se mostra
+            elif letra in palavra_secreta:
+                for i in range(len(palavra_secreta)):
+                    if palavra_secreta[i] == letra:
+                        letras_acertadas[i] = letra
 
         # Se não for repetida e não estiver na palavra secreta, então é um erro
 
-        else:
+            else:
             # Sendo um erro, vai para a lista das erradas
-            letras_erradas.append(letra)
+                letras_erradas.append(letra)
             # Desenha a forca
-            Forca(tentativa)
+                Forca(tentativa)
             # Gasta mais uma tentativa
-            tentativa += 1
+                tentativa += 1
         
         # Caso já não haja "_" dentro das letras_acertadas, então já descobrimos a palavra e vencemos o jogo
 
-        if "_" not in letras_acertadas:
-            print("\n")
-            print("Parabéns! Você venceu com " + str(len(letras_erradas))+" erros. A palavra era: " + escolha)
-            break
-        elif tentativa == max_tentativas:
-            print("\nGame over! Você perdeu. A palavra era: " + escolha)
-            break
+            if "_" not in letras_acertadas:
+                print("\n")
+                print("PARABÉNS!! Você venceu com " + str(len(letras_erradas))+" erros. A palavra era: " + escolha)
+                print()
+                break
+            elif tentativa == max_tentativas:
+                print("\nGame over! Você perdeu. A palavra era: " + escolha)
+                break
 
     # Caso o input não esteja correto, avisa.
 
-    else:
-        print("Entrada inválida. Digite apenas letras e apenas uma.")
+        else:
+            print("Entrada inválida. Digite apenas letras e apenas uma.")
+else:
+            print("Não digitou de 1 a 2, tente novamente.") #Caso o número inserido nao seja de 1 ou 2. 
