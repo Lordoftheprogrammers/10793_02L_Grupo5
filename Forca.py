@@ -7,9 +7,11 @@ import random
 # Definir uma função para criar o boneco
 
 def Forca(erros):
-    Body_parts = ["  |","  O"," \|/","  |"," / \\"]
+    desenho = ""
+    Body_parts = [">","<","(((()","'",">"]
     for i in range(erros+1):
-        print(Body_parts[i])
+        desenho += Body_parts[i]
+    print(desenho)
 
 # Definir função para tratar correção do input
 
@@ -32,7 +34,7 @@ letras_erradas = []
 
 # Jogo com 5 tentativas (<6)
 
-print("\n=====Menu Inicial do Jogo da FORCA!=====\n")
+print("\n=====Menu Inicial do Jogo da SARDINHA, uma variante do jogo da forca!=====\n")
 print("1. Jogar")
 print("0. Sair")
 
