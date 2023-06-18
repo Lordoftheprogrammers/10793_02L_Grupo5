@@ -19,7 +19,7 @@ def Input_correto(carater):
     else:
         return False
 
-# Inicializar variáveis
+# Inicializar variáveis relevantes
 
 palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas", "Transito", "Turistas"]
 escolha = palavras[random.randint(0,len(palavras)-1)]
