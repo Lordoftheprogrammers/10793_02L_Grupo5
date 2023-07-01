@@ -4,7 +4,7 @@
 
 import random
 
-# Definir uma função para criar o boneco
+# Definir uma função para criar uma sardinha
 
 def Forca(erros):
     desenho = ""
@@ -23,7 +23,7 @@ def Input_correto(carater):
 
 # Inicializar variáveis relevantes
 
-palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas", "Transito", "Turistas"]
+palavras = ["Fado", "Alfama", "Colombo", "Tejo", "Terramotos", "Docas", "Transito", "Turistas", "Sardinha"]
 escolha = palavras[random.randint(0,len(palavras)-1)]
 palavra_secreta = escolha.lower()
 
